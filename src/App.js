@@ -10,10 +10,11 @@ function App() {
   return (
     <Routes>
       <Route path="/feed" element={<HomePage />} />
-      <Route path="/" element={<Login />} />
+      {/* <Route path="/" element={<Login />} />
       <Route path="/edit-profile" element={<EditProfile />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile/:profileId" element={<UserProfile />} />
+      <Route path="/question/:questionId" element={<Question />} /> */}
       <Route path="/question/:questionId" element={<Question />} />
     </Routes>
   );
