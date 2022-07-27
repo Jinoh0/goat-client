@@ -6,7 +6,7 @@ import { UserProfile } from "./pages/userProfile";
 import { Question } from "./pages/question";
 import { AuthContextComponent } from "./context/authContext";
 import { SearchUser } from "./pages/userProfile";
-
+import { EditProfile } from "./components/editProfileForm";
 import { ProtectedRoute } from "./components/protectedRoute";
 
 import "./index.css";
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/feed" element={<HomePage />} />
         <Route path="/" element={<Login />} />
-        {/* <Route path="/edit-profile" element={<EditProfile />} /> */}
+        <Route path="/edit-profile" element={<EditProfile />} />
         <Route
           path="/profile"
           element={<ProtectedRoute component={Profile} />}
