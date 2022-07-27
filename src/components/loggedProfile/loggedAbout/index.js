@@ -1,29 +1,32 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 
-export function LoggedAbout() {
-  const [loggedInUser, SetLoggedInUser] = useState({});
+export function LoggedAbout({user}) {
+  // const [user, setUser] = useState({});
 
-  useEffect(() => {
-    async function fetchUser() {
-      try {
-        const response = await api.get("/user/profile");
-        SetLoggedInUser(response.data);
-        // console.log(loggedInUser);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchUser();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchUser() {
+      
+  //     try {
+  //       const response = await api.get("/user/profile");
+  //       setUser(response.data);
+  //       // console.log(user);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchUser();
+  // }, []);
 
-//   console.log(loggedInUser);
+//   console.log(user);
+// console.log(user.email)
   return (
     <>
-      <img src={loggedInUser.img} alt="profile pic" />
-      <h1>soon{loggedInUser.userName}</h1>
-      <h4>{loggedInUser.email}</h4>
-      <p>soon{loggedInUser.bio}</p>
+    <h1>__________loggedAbout____________</h1>
+      <img src={user.img} alt="profile pic" />
+      <h1>username{user.userName}</h1>
+      <h4>email{user.email}</h4>
+      <p>userbio{user.bio}</p>
     </>
   );
 }
