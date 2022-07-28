@@ -10,25 +10,22 @@ import { EditProfile } from "./components/editProfileForm";
 import { ProtectedRoute } from "./components/protectedRoute";
 
 import "./index.css";
-function App() {  
+function App() {
   return (
-
-    <AuthContextComponent>    
-
+    <AuthContextComponent>
       <Routes>
         <Route path="/feed" element={<HomePage />} />
         <Route path="/" element={<Login />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route
           path="/profile"
-          element={<ProtectedRoute component={Profile} />}     
+          element={<ProtectedRoute component={Profile} />}
+        />
 
         {/* <Route path="/profile/:profileId" element={<UserProfile />} /> */}
         <Route path="/question/:id" element={<Question />} />
 
         <Route path="/:profileId" element={<SearchUser />} />
-
-
       </Routes>
     </AuthContextComponent>
   );
