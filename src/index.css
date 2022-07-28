@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  background-color: #8fbb99;  
+@layer components {
+  .entirebg1 {
+    @apply bg-beigegoat flex flex-col;
+  }
+
+  .questionCard1 {
+    @apply bg-orangegoat w-2/3 border m-2  justify-items-center;
+  }
+
+  .navbar1 {
+    @apply fixed top-0 left-0 h-screen flex flex-col justify-around bg-graygoat w-1/6;
+  }
+
+  .centertools1 {
+    @apply flex items-center justify-center;
+  }
 }

@@ -31,9 +31,9 @@ export function CreateQuestion() {
   }
 
   return (
-    <div className="flex flex-col w-56 border">
+    <div className="centertools1">
       {isToggled ? (
-        <div className="flex flex-col w-56 border">
+        <div className="">
           <div>
             <span onClick={toggle}>Or don't...</span>
           </div>

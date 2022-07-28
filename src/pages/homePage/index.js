@@ -6,14 +6,14 @@ import { NavBar } from "../../components/navbar/navBar";
 
 export function HomePage() {
   return (
-    <div className="">
+    <div className="flex flex-col">
       <NavBar />
-      <h1 className="">
+      <div className="ml-[16%]">
         <SearchBar />
         <FilterBar />
         <CreateQuestion />
         <PostCard />
-      </h1>
+      </div>
     </div>
   );
 }
