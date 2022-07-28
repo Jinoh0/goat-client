@@ -39,7 +39,7 @@ export function SearchBar() {
   });
   console.log(filteredItem);
   return (
-    <>
+    <div className="centertools1">
       <form>
         <label htmlFor="input-search">Search:</label>
         <input
@@ -63,6 +63,6 @@ export function SearchBar() {
           })}
         </ul>
       )}
-    </>
+    </div>
   );
 }

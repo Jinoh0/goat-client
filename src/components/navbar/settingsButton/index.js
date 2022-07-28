@@ -15,20 +15,24 @@ export function SettingsButton() {
   }
 
   return (
-    <>
+    <div>
       {isToggled ? (
-        <>
-          <button onClick={toggle}>Settings</button>
+        <div>
+          <button className="hover:text-orangegoat" onClick={toggle}>
+            Settings
+          </button>
           <Link to={"/edit-profile"}>
             <button>Edit Profile</button>
           </Link>
           <button onClick={handleLogOut}>Sign Out</button>
-        </>
+        </div>
       ) : (
-        <>
-          <button onClick={toggle}>Settings</button>
-        </>
+        <div>
+          <button className="hover:text-orangegoat" onClick={toggle}>
+            Settings
+          </button>
+        </div>
       )}
-    </>
+    </div>
   );
 }
