@@ -18,7 +18,7 @@ export function SettingsButton() {
     <>
       {isToggled ? (
         <>
-          <span onClick={toggle}>Settings</span>
+          <button onClick={toggle}>Settings</button>
           <Link to={"/edit-profile"}>
             <button>Edit Profile</button>
           </Link>

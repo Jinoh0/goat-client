@@ -1,6 +1,7 @@
 import { api } from "../../api/api";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { NavBar } from "../../components/navbar/navBar";
 import { QuestionCard } from "../../components/question/questionCard";
 import { CommentCard } from "../../components/question/commentCard";
 import { CommentSection } from "../../components/question/commentSection";
@@ -49,6 +50,7 @@ export function Question() {
 
   return (
     <div>
+      <NavBar />
       <QuestionCard postDetail={postDetail} />
       <CommentSection />
       <CommentCard />

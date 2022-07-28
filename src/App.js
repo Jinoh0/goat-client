@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/homePage/index";
 import { Login } from "./pages/login";
 import { Profile } from "./pages/profile";
-import { UserProfile } from "./pages/userProfile";
 import { Question } from "./pages/question";
 import { AuthContextComponent } from "./context/authContext";
 import { SearchUser } from "./pages/userProfile";
@@ -14,8 +13,8 @@ function App() {
   return (
     <AuthContextComponent>
       <Routes>
-        <Route path="/feed" element={<HomePage />} />
         <Route path="/" element={<Login />} />
+        <Route path="/feed" element={<HomePage />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route
           path="/profile"

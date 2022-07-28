@@ -3,7 +3,7 @@ import { api } from "../../api/api";
 import { LoggedAbout } from "../../components/loggedProfile/loggedAbout";
 import { LoggedActivities } from "../../components/loggedProfile/loggedActivity";
 import { LoggedFavorites } from "../../components/loggedProfile/loggedFavorites";
-import { SettingsButton } from "../../components/navbar/settingsButton";
+import { NavBar } from "../../components/navbar/navBar";
 
 export function Profile() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,9 +24,9 @@ export function Profile() {
 
   return (
     <>
+    <NavBar/>
       {!isLoading && (
-        <>
-          <SettingsButton />
+        <>         
           <LoggedAbout user={user} />
           <LoggedFavorites user={user} />
           <LoggedActivities user={user} />
