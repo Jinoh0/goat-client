@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apisURL = {
   development: "http://localhost:4000",
-  production: "url do deploy",
+  production: "https://goat-server-back.herokuapp.com",
 };
 
 const api = axios.create({
