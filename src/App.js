@@ -21,10 +21,13 @@ function App() {
           path="/profile"
           element={<ProtectedRoute component={Profile} />}
         />
+<<<<<<< HEAD
 
         {/* <Route path="/profile/:profileId" element={<UserProfile />} /> */}
+=======
+        <Route path="/profile/:profileId" element={<UserProfile />} />
+>>>>>>> 12ccaddbd95840dc5c714730aa02ff34ad061595
         <Route path="/question/:id" element={<Question />} />
-
         <Route path="/:profileId" element={<SearchUser />} />
       </Routes>
     </AuthContextComponent>
