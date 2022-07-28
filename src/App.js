@@ -21,7 +21,6 @@ function App() {
           path="/profile"
           element={<ProtectedRoute component={Profile} />}
         />
-        {/* <Route path="/profile/:profileId" element={<UserProfile />} /> */}
         <Route path="/question/:id" element={<Question />} />
         <Route path="/:profileId" element={<SearchUser />} />
       </Routes>
