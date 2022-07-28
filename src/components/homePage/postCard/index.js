@@ -19,10 +19,10 @@ export function PostCard() {
   }, []);
 
   return (
-    <div className="border-2 text-left">
+    <div className="border-2  flex flex-col justify-center text-center items-center">
       {posts.map((currentElement) => {
         return (
-          <div key={currentElement._id} className="border m-2">
+          <div key={currentElement._id} className="questionCard1">
             <Link
               to={`/question/${currentElement._id}`}
               style={{ textDecoration: "none" }}

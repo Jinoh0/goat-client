@@ -24,7 +24,7 @@ export function FilterBar() {
   }, []);
 
   return (
-    <>
+    <div className="centertools1">
       <select name="category" id="category" onChange={handleSelect}>
         <option defaultValue hidden>
           Search by language/framework?
@@ -39,7 +39,7 @@ export function FilterBar() {
         <option value="Bootstrap">Bootstrap</option>
         <option value="GIT & GITHUB">GIT & GITHUB</option>
         <option value="NodeJS">NodeJs</option>
-        {/* <option value="other">Other</option> */}
+        <option value="other">Other</option>
       </select>
 
       {post
@@ -48,12 +48,14 @@ export function FilterBar() {
         })
         .map((c) => {
           return (
-            <div className="m-5" key={c._id}>
-              <p>{c.title}</p>
-              <p>{c.description}</p>
+            <div key={c._id}>
+              <div className="flex flex-col w-[300px] h-[150px]">
+                <p>{c.title}</p>
+                <p>{c.description}</p>
+              </div>
             </div>
           );
         })}
-    </>
+    </div>
   );
 }
