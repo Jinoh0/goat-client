@@ -27,7 +27,19 @@ export function CommentCard() {
           <div key={current._id} className="border m-2">
             <h3>{current.owner.email}</h3>
             <p>{current.comment}</p>
-            <button>like</button>
+            <button
+              onClick={async function likeComment() {
+                try {
+                  const id = current._id;
+                  const response = await api.patch(`/comment/like/${id}`);
+                  console.log(response);
+                } catch (error) {
+                  console.log(error);
+                }
+              }}
+            >
+              like
+            </button>
           </div>
         );
       })}

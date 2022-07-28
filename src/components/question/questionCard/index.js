@@ -1,6 +1,17 @@
 import { differenceInDays } from "date-fns";
-
+import { useParams } from "react-router-dom";
+import { api } from "../../../api/api";
 export function QuestionCard({ postDetail }) {
+  const { id } = useParams();
+  async function favQuestion() {
+    try {
+      const response = await api.patch(`/post/${id}/favorite`);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <div className="border m-2">
@@ -16,6 +27,8 @@ export function QuestionCard({ postDetail }) {
           </span>
         </h1>
         <p>{postDetail.description}</p>
+
+        <button onClick={favQuestion}>favorite</button>
       </div>
     </div>
   );
