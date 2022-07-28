@@ -47,7 +47,7 @@ export function SearchBar() {
           type="text"
           onChange={searchItems}
           placeholder="search"
-          onMouseOver={toggle}
+          onClick={toggle}
         />
       </form>
       {isToggled && (
