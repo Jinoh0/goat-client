@@ -31,8 +31,8 @@ export function PostCard() {
               <p>
                 asked {""}
                 {differenceInDays(
-                  new Date(currentElement.createdAt),
-                  new Date(Date.now())
+                  new Date(Date.now()),
+                  new Date(currentElement.createdAt)
                 )}{" "}
                 {""}
                 days ago by <strong>{currentElement.owner.email}</strong>

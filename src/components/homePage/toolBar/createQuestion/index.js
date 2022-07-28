@@ -20,6 +20,7 @@ export function CreateQuestion() {
 
     try {
       const response = await api.post("/post/create-post", form);
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }

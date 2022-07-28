@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../../api/api";
 import { Link } from "react-router-dom";
+import { set } from "date-fns";
 
 export function SearchBar() {
   const [post, setPost] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [isToggled, setIsToggled] = useState(false);
+
+  function toggle() {
+    setIsToggled(!isToggled);
+  }
 
   useEffect(() => {
     async function fetchPost() {
@@ -41,19 +47,22 @@ export function SearchBar() {
           type="text"
           onChange={searchItems}
           placeholder="search"
+          onMouseOver={toggle}
         />
       </form>
-      <ul>
-        {filteredItem.map((c) => {
-          return (
-            <div key={c._id}>
-              <Link to={`/question/${c._id}`}>
-                <li>{c.title}</li>
-              </Link>
-            </div>
-          );
-        })}
-      </ul>
+      {isToggled && (
+        <ul>
+          {filteredItem.map((c) => {
+            return (
+              <div key={c._id}>
+                <Link to={`/question/${c._id}`}>
+                  <li>{c.title}</li>
+                </Link>
+              </div>
+            );
+          })}
+        </ul>
+      )}
     </>
   );
 }
