@@ -3,10 +3,8 @@ import { CreateQuestion } from "../../components/homePage/toolBar/createQuestion
 export function HomePage() {
   return (
     <div className="">
-      <h1 className="">
-        <CreateQuestion />
-        <PostCard />
-      </h1>
+      <CreateQuestion />
+      <PostCard />
     </div>
   );
 }

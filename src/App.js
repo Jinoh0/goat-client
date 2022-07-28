@@ -12,8 +12,7 @@ import { ProtectedRoute } from "./components/protectedRoute";
 import "./index.css";
 function App() {
   return (
-
-    <AuthContextComponent>    
+    <AuthContextComponent>
       <Routes>
         <Route path="/feed" element={<HomePage />} />
         <Route path="/" element={<Login />} />
@@ -23,10 +22,9 @@ function App() {
           element={<ProtectedRoute component={Profile} />}
         />
         {/* <Route path="/profile/:profileId" element={<UserProfile />} /> */}
-         <Route path="/question/:questionId" element={<Question />} /> 
+        <Route path="/question/:id" element={<Question />} />
       </Routes>
     </AuthContextComponent>
-
   );
 }
 

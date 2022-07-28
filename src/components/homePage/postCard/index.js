@@ -3,14 +3,14 @@ import { api } from "../../../api/api";
 import { Link } from "react-router-dom";
 import { differenceInDays } from "date-fns";
 export function PostCard() {
-  const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     async function fetchPost() {
       try {
         const response = await api.get("/post/all-posts");
-        console.log(response.data);
-        setPost(response.data);
+
+        setPosts(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -20,7 +20,7 @@ export function PostCard() {
 
   return (
     <div className="border-2 text-left">
-      {post.map((currentElement) => {
+      {posts.map((currentElement) => {
         return (
           <div key={currentElement._id} className="border m-2">
             <Link
