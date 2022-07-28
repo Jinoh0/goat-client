@@ -8,9 +8,9 @@ export function EditProfile() {
   //   const navigate = useNavigate();
   const [file, setFile] = useState("");
 
-  const [pic, setPic] = useState({
-    img: "",
-  });
+  // const [pic, setPic] = useState({
+  //   img: "",
+  // });
 
   const [form, setForm] = useState({
     userName: "",
@@ -37,19 +37,27 @@ export function EditProfile() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  async function handleUpload() {
+    try {
+      const uploadData = new FormData();
+      uploadData.append("picture", file);
+      const responsePic = await api.post("/upload-image", uploadData);
+      return responsePic.data.url;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await api.patch(`/user/update-profile`, form);
-      const uploadData = new FormData();
+      const imgURL = await handleUpload();
 
-      uploadData.append("picture", file);
-      const responsePic = await axios.post(
-        "http://localhost:4000/upload-image",
-        uploadData
-      );
+      const response = await api.patch(`/user/update-profile`, {
+        ...form,
+        img: imgURL,
+      });
 
-      setPic({ ...pic, img: responsePic.data.url });
       console.log(response.data);
       console.log(response);
     } catch (error) {
@@ -63,7 +71,7 @@ export function EditProfile() {
         <input
           placeholder="Profile Photo"
           type="file"
-          value={pic.img}
+          // value={file}
           // agora nao ta dando certo , depois tirar
           name="img"
           onChange={handleFile}
