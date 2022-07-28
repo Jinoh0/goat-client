@@ -20,8 +20,8 @@ export function QuestionCard({ postDetail }) {
           <span>
             asked by {postDetail.owner.email}{" "}
             {differenceInDays(
-              new Date(postDetail.createdAt),
-              new Date(Date.now())
+              new Date(Date.now()),
+              new Date(postDetail.createdAt)
             )}{" "}
             days ago
           </span>
