@@ -12,6 +12,7 @@ export function CommentSection() {
     e.preventDefault();
     try {
       await api.post(`/comment/${id}/create-comment`, form);
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
