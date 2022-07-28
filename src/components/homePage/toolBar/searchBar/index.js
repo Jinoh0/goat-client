@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { api } from "../../../../api/api";
+import { Link } from "react-router-dom";
 
 export function SearchBar() {
   const [post, setPost] = useState([]);
@@ -30,7 +31,7 @@ export function SearchBar() {
       return e.title.toLowerCase().includes(searchInput);
     }
   });
-
+  console.log(filteredItem);
   return (
     <>
       <form>
@@ -42,6 +43,17 @@ export function SearchBar() {
           placeholder="search"
         />
       </form>
+      <ul>
+        {filteredItem.map((c) => {
+          return (
+            <div key={c._id}>
+              <Link to={`/question/${c._id}`}>
+                <li>{c.title}</li>
+              </Link>
+            </div>
+          );
+        })}
+      </ul>
     </>
   );
 }
