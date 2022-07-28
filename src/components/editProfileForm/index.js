@@ -1,12 +1,18 @@
 import { api } from "../../api/api";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
+//trocarnome da funcao depois q criar a page
 export function EditProfile() {
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
+  const [file, setFile] = useState("");
+
+  const [pic, setPic] = useState({
+    img: "",
+  });
 
   const [form, setForm] = useState({
-    img: "",
     userName: "",
     bio: "",
   });
@@ -23,6 +29,10 @@ export function EditProfile() {
     fetchUser();
   }, []);
 
+  function handleFile(e) {
+    setFile(e.target.files[0]);
+  }
+
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
@@ -31,7 +41,17 @@ export function EditProfile() {
     e.preventDefault();
     try {
       const response = await api.patch(`/user/update-profile`, form);
-      console.log(response)
+      const uploadData = new FormData();
+
+      uploadData.append("picture", file);
+      const responsePic = await axios.post(
+        "http://localhost:4000/upload-image",
+        uploadData
+      );
+
+      setPic({ ...pic, img: responsePic.data.url });
+      console.log(response.data);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -41,11 +61,12 @@ export function EditProfile() {
     <>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="Profile Picture"
+          placeholder="Profile Photo"
           type="file"
-          value={form.img}
+          value={pic.img}
+          // agora nao ta dando certo , depois tirar
           name="img"
-          onChange={handleChange}
+          onChange={handleFile}
         />
 
         <input
@@ -62,7 +83,6 @@ export function EditProfile() {
           name="bio"
           onChange={handleChange}
         />
-
         <button type="submit">Submit</button>
       </form>
     </>

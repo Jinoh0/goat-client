@@ -10,9 +10,8 @@ import { EditProfile } from "./components/editProfileForm";
 import { ProtectedRoute } from "./components/protectedRoute";
 
 import "./index.css";
-function App() {
+function App() {  
   return (
-
     <AuthContextComponent>    
       <Routes>
         <Route path="/feed" element={<HomePage />} />
