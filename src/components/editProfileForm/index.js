@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 //trocarnome da funcao depois q criar a page
-export function EditProfile() {
+export function EditProfileForm() {
   //   const navigate = useNavigate();
   const [file, setFile] = useState("");
 

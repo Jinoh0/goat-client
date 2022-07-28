@@ -6,7 +6,7 @@ import { UserProfile } from "./pages/userProfile";
 import { Question } from "./pages/question";
 import { AuthContextComponent } from "./context/authContext";
 import { SearchUser } from "./pages/userProfile";
-import { EditProfile } from "./components/editProfileForm";
+import { EditProfile } from "./pages/editProfile";
 import { ProtectedRoute } from "./components/protectedRoute";
 
 import "./index.css";
