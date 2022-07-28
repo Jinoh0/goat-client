@@ -8,8 +8,7 @@ function AuthContextComponent(props) {
     user: {},
   });
 
-  console.log(loggedInUser);
-
+ 
   useEffect(() => {
     const storedUser = localStorage.getItem("loggedInUser");
 
