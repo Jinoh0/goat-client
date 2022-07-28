@@ -12,7 +12,7 @@
   }
 
   .navbar1 {
-    @apply fixed top-0 left-0 h-screen flex flex-col justify-around bg-graygoat;
+    @apply fixed top-0 left-0 h-screen flex flex-col justify-around bg-graygoat w-1/6;
   }
 
   .centertools1 {
