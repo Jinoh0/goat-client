@@ -1,6 +1,7 @@
 import { api } from "../../api/api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { NavBar } from "../../components/navbar/navBar/index";
 
 import { SearchedUserAbout } from "../../components/profile/aboutUser";
 import { SearchedUserActivities } from "../../components/profile/userActivity";
@@ -28,6 +29,7 @@ export function SearchUser() {
 
   return (
     <>
+      <NavBar />
       {!isLoading && (
         <>
           <SearchedUserActivities user={user} />
