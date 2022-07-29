@@ -11,8 +11,13 @@
   * {
     @apply font-jetbrains;
   }
+
+  body {
+    @apply bg-beigegoat;
+  }
+
   .entirebg1 {
-    @apply bg-beigegoat flex flex-col h-[100%];
+    @apply flex flex-col;
   }
 
   .searchbar1 {
@@ -105,6 +110,42 @@
     @apply flex flex-row w-[100%] justify-between;
   }
   .activities0 {
-    @apply h-[400px]  bg-orangegoat;
+
+    @apply h-[auto]  bg-orangegoat p-6;
   }
+
+  .profilecard0 {
+    @apply flex rounded-lg items-center justify-center bg-gray-800 m-8 p-4 h-[50%]  border-white border-2;
+  }
+
+  .profiletext0 {
+    @apply mt-[50%] align-text-top  text-beigegoat transition ease-in-out delay-150;
+  }
+
+  .profileimg0 {
+    @apply rounded-full justify-center items-center border-4  inline object-cover  w-[200px] h-[200px] mr-2 border-graygoat;
+  }
+
+  .settings0 {
+    @apply flex flex-row justify-around items-center;
+  }
+  .settingsbtnefx {
+    @apply ease-out duration-300 shadow-white drop-shadow-2xl  text-xl;
+  }
+
+  .editprofile0 {
+    @apply flex flex-col justify-center items-center h-screen  mr-[40%];
+  }
+
+  .username0 {
+    @apply h-[5%] mb-6 mt-6;
+  }
+
+  .bio0 {
+    @apply h-[50%] w-[50%] break-words mb-[5%] p-4;
+  }
+
+  .posts0 {
+    @apply p-4 border-gray-500 break-words mr-5  border-2 m-4 bg-gray-300 h-[400px]  bg-orangegoat
+    }
 }

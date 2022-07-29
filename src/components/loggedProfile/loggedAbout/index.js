@@ -1,8 +1,8 @@
 export function LoggedAbout({ user }) {
   return (
     <div className="halfbox0">
-      <h1>__________logged About____________</h1>
-      <p>userbio{user.bio}</p>
+      <h1>About me:</h1>
+      <p>{user.bio}</p>
     </div>
   );
 }
