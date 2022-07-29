@@ -32,7 +32,6 @@ export function QuestionCard() {
 
   const { id } = useParams();
   async function favQuestion() {
-    //comentario
     try {
       const response = await api.patch(`/post/${id}/favorite`);
       toast.success("Saved/Unsaved to favorites");
