@@ -12,7 +12,7 @@ import "./index.css";
 function App() {
   return (
     <AuthContextComponent>
-      <div className="entirebg1 h-screen">
+      <div className="entirebg1 h-[100%]">
         <Routes>
           <Route path="/" element={<Login />} />
 
