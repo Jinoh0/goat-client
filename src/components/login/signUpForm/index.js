@@ -1,3 +1,4 @@
+import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
 import { useState } from "react";
 import { api } from "../../../api/api";
 
@@ -25,7 +26,8 @@ export function SignUpForm() {
         return;
       }
       const response = await api.post("/user/signup", form);
-      console.log(response.data);
+      window.location.reload();
+      
     } catch (error) {
       console.log(error);
       return;

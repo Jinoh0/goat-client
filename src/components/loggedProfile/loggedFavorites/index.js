@@ -6,7 +6,7 @@ export function LoggedFavorites({ user }) {
       {/* </div> */}
       {user.favoriteList.map((currentFav) => {
         return (
-          <div className="textbox0">
+          <div className="posts0">
             <p>{currentFav.title}</p>
             <p>{currentFav.category}</p>
             <p>{currentFav.description}</p>

@@ -1,11 +1,10 @@
 export function SearchedUserAbout({ user }) {
   return (
-    <>
-      <h1>__________loggedAbout____________</h1>
+    <div className="usercard0 profiletext0 ml-[-1px] ">
       <img src={user.img} alt="profile pic" />
       <h1>username{user.userName}</h1>
       <h4>email{user.email}</h4>
       <p>userbio{user.bio}</p>
-    </>
+    </div>
   );
 }

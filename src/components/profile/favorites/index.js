@@ -3,12 +3,12 @@ export function SearchedUserFavorites({ user }) {
     <>
       {user.favoriteList.map((currentFav) => {
         return (
-          <>
-            <h1>___________favorites__________</h1>
+          <div className="posts0">
+            <h1>Favorites</h1>
             <p>{currentFav.title}</p>
             <p>{currentFav.category}</p>
             <p>{currentFav.description}</p>
-          </>
+          </div>
         );
       })}
     </>

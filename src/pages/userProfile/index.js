@@ -31,11 +31,11 @@ export function SearchUser() {
     <>
       <NavBar />
       {!isLoading && (
-        <>
-          <SearchedUserActivities user={user} />
+        <div className="ml-[19%]">
           <SearchedUserFavorites user={user} />
           <SearchedUserAbout user={user} />
-        </>
+          <SearchedUserActivities user={user} />
+        </div>
       )}
     </>
   );
