@@ -1,9 +1,33 @@
 import { differenceInDays } from "date-fns";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { api } from "../../../api/api";
 import { toast } from "react-hot-toast";
-export function QuestionCard({ postDetail }) {
-  console.log(postDetail);
+export function QuestionCard() {
+  const [postDetail, setPostDetail] = useState({
+    owner: {
+      email: "",
+      userName: "",
+    },
+    title: "",
+    category: "",
+    link: "",
+    createdAt: "",
+    description: "",
+    comments: [
+      {
+        owner: "",
+        comment: "",
+        createdAt: "",
+        likes: [
+          {
+            userName: "",
+          },
+        ],
+      },
+    ],
+  });
+
   const { id } = useParams();
   async function favQuestion() {
     try {
@@ -14,6 +38,23 @@ export function QuestionCard({ postDetail }) {
       console.log(error);
     }
   }
+
+  useEffect(
+    () =>
+      async function fetchPost() {
+        try {
+          const response = await api.get(`/post/${id}`);
+
+          setPostDetail(response.data);
+          console.log(response.data);
+          return null;
+        } catch (error) {
+          console.log(error);
+        }
+        fetchPost();
+      },
+    [id]
+  );
 
   return (
     <div className=" flex flex-col  items-center   ">
