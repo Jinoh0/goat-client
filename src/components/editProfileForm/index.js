@@ -1,16 +1,11 @@
 import { api } from "../../api/api";
 import { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-//trocarnome da funcao depois q criar a page
 export function EditProfileForm() {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [file, setFile] = useState("");
-
-  // const [pic, setPic] = useState({
-  //   img: "",
-  // });
 
   const [form, setForm] = useState({
     userName: "",
@@ -52,27 +47,24 @@ export function EditProfileForm() {
     e.preventDefault();
     try {
       const imgURL = await handleUpload();
-
       const response = await api.patch(`/user/update-profile`, {
         ...form,
         img: imgURL,
       });
-
-      console.log(response.data);
-      console.log(response);
+      navigate("/profile");
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
+
     <div className="ml-[16%]">
+
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Profile Photo"
           type="file"
-          // value={file}
-          // agora nao ta dando certo , depois tirar
           name="img"
           onChange={handleFile}
         />

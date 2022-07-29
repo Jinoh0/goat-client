@@ -23,7 +23,7 @@ export function UserCard() {
     <>
       {!isLoading && (
         <>
-          <Link to={"/edit-profile"}>
+          <Link to={"/profile"}>
             <h1>__________loggedAbout____________</h1>
             <img src={user.img} alt="profile pic" />
             <h1>username{user.userName}</h1>

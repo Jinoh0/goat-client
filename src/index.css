@@ -37,10 +37,74 @@
   }
 
   .navbar1 {
-    @apply fixed top-0 left-0 h-screen flex flex-col justify-around bg-graygoat w-1/6;
+    @apply fixed top-0 left-0 h-screen flex 
+    flex-col justify-around bg-graygoat w-1/6;
   }
 
   .pophover1 {
     @apply hover:text-orangegoat hover:italic flex justify-center text-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110;
+  }
+
+  .centerlogin0 {
+    @apply flex flex-row justify-evenly 
+    items-center content-center  bg-graygoat h-screen pb-52;
+  }
+
+  .form0 {
+    @apply flex flex-col mb-[5px] rounded-xl p-12  bg-[#f5f5dc];
+  }
+
+  .signup0 {
+    @apply flex flex-col mb-[5px]  rounded-xl  p-12 bg-[#F5F5DC];
+  }
+
+  .input0 {
+    @apply mb-3 h-8  border-2 bg-[#F5F5DC];
+  }
+
+  .button0 {
+    @apply border-2 
+    border-orangegoat 
+    mt-4  
+    rounded-full w-[45%] justify-center  
+    flex self-center bg-orangegoat text-[#F5F5DC];
+  }
+
+  .logindivider0 {
+    @apply border-l-[2.5px] border-orangegoat  border-solid h-[50%];
+  }
+
+  .title0 {
+    @apply bg-graygoat font-bold 
+    text-center pt-[8%] text-[400%] text-[#AF9BB6];
+  }
+
+  .profilepage0 {
+    @apply ml-[19%] flex flex-col mr-[5%];
+  }
+
+  .halfbox0 {
+    @apply flex   border-solid border-2
+    h-[350px] 
+    w-[49%]    
+    mt-[5%]
+    bg-orangegoat
+    p-3
+    mb-[2%]
+  }
+
+  .favoritesbox0 {
+    @apply flex flex-col font-bold text-center;
+  }
+
+  .textbox0 {
+    @apply flex;
+  }
+
+  .twoblocks0 {
+    @apply flex flex-row w-[100%] justify-between ;
+  }
+  .activities0 {
+    @apply  h-[400px]  bg-orangegoat;
   }
 }
