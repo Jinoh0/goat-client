@@ -4,7 +4,7 @@
 
 @layer components {
   @font-face {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "JetBrains Mono";
     src: url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,400;1,100&display=swap");
   }
 
@@ -110,6 +110,7 @@
     @apply flex flex-row w-[100%] justify-between;
   }
   .activities0 {
+
     @apply h-[auto]  bg-orangegoat p-6;
   }
 
@@ -145,6 +146,6 @@
   }
 
   .posts0 {
-    @apply p-4 border-gray-500 break-words mr-5  border-2 m-4 bg-gray-300
-  }
+    @apply p-4 border-gray-500 break-words mr-5  border-2 m-4 bg-gray-300 h-[400px]  bg-orangegoat
+    }
 }
