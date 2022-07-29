@@ -47,7 +47,6 @@ export function QuestionCard() {
 
           setPostDetail(response.data);
           console.log(response.data);
-          return null;
         } catch (error) {
           console.log(error);
         }
