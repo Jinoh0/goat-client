@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
-
+import { toast } from "react-hot-toast";
 export function CommentCard() {
   const { id } = useParams();
   const [comment, setComment] = useState([]);
@@ -20,26 +20,40 @@ export function CommentCard() {
   }, [id]);
 
   return (
-    <div className="border m-2">
+    <div className=" flex flex-col  items-center">
       <h1>comments</h1>
       {comment.map((current) => {
         return (
-          <div key={current._id} className="border m-2">
-            <h3>{current.owner.email}</h3>
+          <div
+            key={current._id}
+            className="justify-center break-words border-2 rounded-md p-8 m-2 w-4/5"
+          >
+            <h3>
+              <strong>{current.owner.email}</strong>
+            </h3>
             <p>{current.comment}</p>
-            <button
-              onClick={async function likeComment() {
-                try {
-                  const id = current._id;
-                  const response = await api.patch(`/comment/like/${id}`);
-                  console.log(response);
-                } catch (error) {
-                  console.log(error);
-                }
-              }}
-            >
-              like
-            </button>
+            <div className="text-end">
+              <button
+                className="regularhover1 mt-6 "
+                onClick={async function likeComment() {
+                  try {
+                    const id = current._id;
+                    const response = await api.patch(`/comment/like/${id}`);
+                    console.log(response);
+                    toast.success("Liked/Unliked");
+                  } catch (error) {
+                    console.log(error);
+                  }
+                }}
+              >
+                like 🐐
+              </button>{" "}
+              {current.likes ? (
+                <span>{current.likes.length}</span>
+              ) : (
+                <span>0</span>
+              )}
+            </div>
           </div>
         );
       })}

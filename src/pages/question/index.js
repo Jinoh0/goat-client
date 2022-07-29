@@ -49,11 +49,13 @@ export function Question() {
   );
 
   return (
-    <div>
-      <NavBar />
-      <QuestionCard postDetail={postDetail} />
-      <CommentSection />
-      <CommentCard />
+    <div className="flex flex-col justify-center ">
+      <div className="ml-[16%]">
+        <NavBar />
+        <QuestionCard postDetail={postDetail} />
+        <CommentSection />
+        <CommentCard />
+      </div>
     </div>
   );
 }

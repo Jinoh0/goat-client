@@ -7,12 +7,15 @@ import { AuthContextComponent } from "./context/authContext";
 import { SearchUser } from "./pages/userProfile";
 import { EditProfile } from "./pages/editProfile";
 import { ProtectedRoute } from "./components/protectedRoute";
-
+import { Toaster } from "react-hot-toast";
 import "./index.css";
 function App() {
   return (
     <AuthContextComponent>
-      <div className="entirebg1 h-[100%]">
+
+      <Toaster />
+      <div className="entirebg1">
+
         <Routes>
           <Route path="/" element={<Login />} />
 
