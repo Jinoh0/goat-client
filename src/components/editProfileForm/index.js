@@ -58,11 +58,11 @@ export function EditProfileForm() {
   }
 
   return (
-
-    <div className="ml-[16%]">
-
-      <form onSubmit={handleSubmit}>
+    <div className="ml-[16%] ">
+      <form onSubmit={handleSubmit} className="editprofile0">
+      Change your profile pic.
         <input
+          className="input0"
           placeholder="Profile Photo"
           type="file"
           name="img"
@@ -70,20 +70,22 @@ export function EditProfileForm() {
         />
 
         <input
+          className="username0"
           placeholder="Username"
           type="text"
           value={form.userName}
           name="userName"
           onChange={handleChange}
         />
-        <input
+        <textArea
+          className="bio0"
           placeholder="Bio"
           type="text"
           value={form.bio}
           name="bio"
           onChange={handleChange}
-        />
-        <button type="submit">Submit</button>
+        ></textArea>
+        <button className="button0" type="submit">Submit</button>
       </form>
     </div>
   );

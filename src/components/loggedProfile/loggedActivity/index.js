@@ -11,21 +11,21 @@ export function LoggedActivities({ user }) {
 
   return (
     <div className="activities0">
-      <h1>____________activities_______</h1>
-      <h1>------posts-------</h1>
+      <h1>User Activities:</h1>
+      <h1>Posts:</h1>
       {posts.map((c) => {
         return (
-          <>
-            <p>{c.title}</p>
-            <p>{c.category}</p>
-            <p>{c.description}</p>
-          </>
+          <div className="posts0">
+            <p>Title: {c.title}</p>
+            <p>Category: {c.category}</p>
+            <p>Description: {c.description}</p>
+          </div>
         );
       })}
-      <h1>--------comments----------</h1>
+      <h1>Comments:</h1>
       {comments.map((c) => {
         return (
-          <>
+          <div className="posts0">
             <p>{c.comment}</p>
             <p>
               commented {""}
@@ -36,7 +36,7 @@ export function LoggedActivities({ user }) {
               {""}
               days ago by <strong>{c.owner}</strong>
             </p>
-          </>
+          </div>
         );
       })}
     </div>
