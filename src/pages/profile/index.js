@@ -24,13 +24,15 @@ export function Profile() {
 
   return (
     <>
-    <NavBar/>
+      <NavBar />
       {!isLoading && (
-        <>         
-          <LoggedAbout user={user} />
-          <LoggedFavorites user={user} />
+        <div className="profilepage0">
+          <div className="twoblocks0">
+            <LoggedFavorites user={user} />
+            <LoggedAbout user={user} />
+          </div>
           <LoggedActivities user={user} />
-        </>
+        </div>
       )}
     </>
   );

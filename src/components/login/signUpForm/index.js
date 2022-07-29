@@ -33,9 +33,11 @@ export function SignUpForm() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className="mr-[25%]">
+      <form onSubmit={handleSubmit} className="signup0">
+        <div>Sign up here</div>
         <input
+          className="input0"
           placeholder="E-mail"
           type="text"
           value={form.email}
@@ -43,6 +45,7 @@ export function SignUpForm() {
           onChange={handleChange}
         />
         <input
+          className="input0"
           placeholder="E-mail Confirmation"
           type="text"
           value={form.emailConfirm}
@@ -50,6 +53,7 @@ export function SignUpForm() {
           onChange={handleChange}
         />
         <input
+          className="input0"
           placeholder="Password"
           type="password"
           value={form.password}
@@ -57,14 +61,17 @@ export function SignUpForm() {
           onChange={handleChange}
         />
         <input
+          className="input0"
           placeholder="Password Confirmation"
           type="password"
           value={form.passwordConfirm}
           name="passwordConfirm"
           onChange={handleChange}
         />
-        <button type="submit">Submit</button>
+        <button className="button0" type="submit">
+          Submit
+        </button>
       </form>
-    </>
+    </div>
   );
 }
