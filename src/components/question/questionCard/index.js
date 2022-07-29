@@ -39,21 +39,19 @@ export function QuestionCard() {
     }
   }
 
-  useEffect(
-    () =>
-      async function fetchPost() {
-        try {
-          const response = await api.get(`/post/${id}`);
+  useEffect(() => {
+    async function fetchPost() {
+      try {
+        const response = await api.get(`/post/${id}`);
 
-          setPostDetail(response.data);
-          console.log(response.data);
-        } catch (error) {
-          console.log(error);
-        }
-        fetchPost();
-      },
-    [id]
-  );
+        setPostDetail(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+      fetchPost();
+    }
+  }, [id]);
 
   return (
     <div className=" flex flex-col  items-center   ">
