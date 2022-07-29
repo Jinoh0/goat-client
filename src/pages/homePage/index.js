@@ -9,9 +9,11 @@ export function HomePage() {
     <div className="flex flex-col">
       <NavBar />
       <div className="ml-[16%]">
-        <SearchBar />
-        <FilterBar />
-        <CreateQuestion />
+        <div className="flex flex-col m-2 p-2 items-center justify-center">
+          <SearchBar />
+          <FilterBar />
+          <CreateQuestion />
+        </div>
         <PostCard />
       </div>
     </div>

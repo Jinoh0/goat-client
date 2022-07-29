@@ -39,14 +39,16 @@ export function SearchBar() {
   });
   console.log(filteredItem);
   return (
-    <div className="centertools1">
+    <div className="searchbar1">
       <form>
-        <label htmlFor="input-search">Search:</label>
+        <label htmlFor="input-search" className=""></label>
         <input
+          size="36"
+          className="inputs1"
           name="search"
           type="text"
           onChange={searchItems}
-          placeholder="search"
+          placeholder="Search                              🔍"
           onClick={toggle}
         />
       </form>
@@ -54,9 +56,9 @@ export function SearchBar() {
         <ul>
           {filteredItem.map((c) => {
             return (
-              <div key={c._id}>
+              <div key={c._id} className="justify-items-center">
                 <Link to={`/question/${c._id}`}>
-                  <li>{c.title}</li>
+                  <li className="dropdown1">{c.title}</li>
                 </Link>
               </div>
             );

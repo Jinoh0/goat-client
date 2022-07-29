@@ -66,7 +66,7 @@ export function EditProfileForm() {
   }
 
   return (
-    <>
+    <div className="ml-[16%]">
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Profile Photo"
@@ -93,6 +93,6 @@ export function EditProfileForm() {
         />
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 }

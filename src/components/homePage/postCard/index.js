@@ -19,7 +19,7 @@ export function PostCard() {
   }, []);
 
   return (
-    <div className="border-2  flex flex-col justify-center text-center items-center">
+    <div className="questionBox1">
       {posts.map((currentElement) => {
         return (
           <div key={currentElement._id} className="questionCard1">
@@ -27,15 +27,15 @@ export function PostCard() {
               to={`/question/${currentElement._id}`}
               style={{ textDecoration: "none" }}
             >
-              <h1>{currentElement.title}</h1>
-              <p>
+              <h1 className="mb-6">{currentElement.title}</h1>
+              <p className="text-end">
                 asked {""}
                 {differenceInDays(
                   new Date(Date.now()),
                   new Date(currentElement.createdAt)
                 )}{" "}
                 {""}
-                days ago by <strong>{currentElement.owner.email}</strong>
+                days ago by <strong>{currentElement.owner.email}</strong>🐐
               </p>
             </Link>
           </div>

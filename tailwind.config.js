@@ -3,10 +3,13 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        jetbrains: ["JetBrains Mono"],
+      },
       colors: {
         beigegoat: "#F5F5DC",
         graygoat: "#2D3A3A",
-        orangegoat: "#BD632F",
+        orangegoat: "#D27D4B",
         purplegoat: "#AF9BB6",
       },
     },
