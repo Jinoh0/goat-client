@@ -6,7 +6,6 @@ import { toast } from "react-hot-toast";
 
 import { Link } from "react-router-dom";
 
-
 export function QuestionCard() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -94,7 +93,7 @@ export function QuestionCard() {
           ) : (
             <span>0</span>
           )}
-          <div className="text-end regularhover1">
+          <div className="text-end hover:text-beigegoat transition-all">
             <button onClick={handleDelete}>Delete post</button>
           </div>
         </div>

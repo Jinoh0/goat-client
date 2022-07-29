@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { api } from "../../../api/api";
 import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 export function CommentCard() {
   const { id } = useParams();
   const [comment, setComment] = useState([]);
@@ -35,9 +36,10 @@ export function CommentCard() {
             key={current._id}
             className="justify-center shadow-lg break-words border-2 rounded-md p-8 m-2 w-4/5"
           >
-            <h3>
+            <Link to={`/${current.owner._id}`}>
               <strong>{current.owner.email}</strong>
-            </h3>
+            </Link>
+
             <p>{current.comment}</p>
             <div className="text-end">
               <button
@@ -66,6 +68,8 @@ export function CommentCard() {
                     try {
                       const id = current._id;
                       await api.delete(`/comment/delete/${id}`);
+                      toast.success("deleted");
+                      window.location.reload();
                     } catch (error) {
                       console.log(error);
                       toast.error("you can't delete this comment");
