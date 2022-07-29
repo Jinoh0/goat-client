@@ -37,7 +37,11 @@ export function CommentCard() {
             className="justify-center shadow-lg break-words border-2 rounded-md p-8 m-2 w-4/5"
           >
             <Link to={`/${current.owner._id}`}>
-              <strong>{current.owner.email}</strong>
+              {current.owner.userName ? (
+                <strong>{current.owner.userName}</strong>
+              ) : (
+                <strong>{current.owner.email}</strong>
+              )}
             </Link>
 
             <p>{current.comment}</p>

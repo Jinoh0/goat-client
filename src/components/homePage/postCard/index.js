@@ -35,7 +35,12 @@ export function PostCard() {
                   new Date(currentElement.createdAt)
                 )}{" "}
                 {""}
-                days ago by <strong>{currentElement.owner.email}</strong>🐐
+                days ago by{" "}
+                {currentElement.owner.userName ? (
+                  <strong>{currentElement.owner.userName} 🐐</strong>
+                ) : (
+                  <strong>{currentElement.owner.email} 🐐</strong>
+                )}
               </p>
             </Link>
           </div>
