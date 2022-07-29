@@ -160,8 +160,7 @@
   }
 
   .posts0 {
-
-    @apply p-4 border-gray-500 break-words mr-5  border-2 
+    @apply p-4  break-words mr-5   
     m-4 bg-[#efefbd] 
     h-[100%]
      w-[85%];
@@ -173,6 +172,5 @@
 
   .goatlogo0 {
     @apply h-[100px]  justify-center items-center mt-[-40px];
-
   }
 }
