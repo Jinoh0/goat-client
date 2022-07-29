@@ -24,11 +24,14 @@ export function FilterBar() {
   }, []);
 
   return (
-    <div className="centertools1">
-      <select name="category" id="category" onChange={handleSelect}>
-        <option defaultValue hidden>
-          Search by language/framework?
-        </option>
+    <div className="searchbar1">
+      <select
+        className="inputs1 w-96"
+        name="category"
+        id="category"
+        onChange={handleSelect}
+      >
+        <option defaultValue>Search by language/framework 💾</option>
         <option value="JavaScript">JavaScript</option>
         <option value="HTML">HTML</option>
         <option value="React">React</option>
@@ -42,20 +45,19 @@ export function FilterBar() {
         <option value="other">Other</option>
       </select>
 
-      {post
-        .filter((e) => {
-          return e.category === selected;
-        })
-        .map((c) => {
-          return (
-            <div key={c._id}>
-              <div className="flex flex-col w-[300px] h-[150px]">
-                <p>{c.title}</p>
-                <p>{c.description}</p>
+      <ul className=" ">
+        {post
+          .filter((e) => {
+            return e.category === selected;
+          })
+          .map((c) => {
+            return (
+              <div key={c._id}>
+                <li className="dropdown1">{c.title}</li>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </ul>
     </div>
   );
 }

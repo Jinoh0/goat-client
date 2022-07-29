@@ -3,12 +3,37 @@
 @tailwind utilities;
 
 @layer components {
+  @font-face {
+    font-family: "JetBrains Mono", monospace;
+    src: url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,400;1,100&display=swap");
+  }
+
+  * {
+    @apply font-jetbrains;
+  }
   .entirebg1 {
-    @apply bg-beigegoat flex flex-col;
+    @apply bg-beigegoat flex flex-col h-[100%];
+  }
+
+  .searchbar1 {
+    @apply flex justify-center items-center flex-col;
+  }
+
+  .questionBox1 {
+    @apply border-2 flex flex-col justify-center text-start items-center;
   }
 
   .questionCard1 {
-    @apply bg-orangegoat w-2/3 border m-2  justify-items-center;
+    @apply bg-orangegoat w-2/3  m-2 p-6 justify-items-center rounded-md shadow-xl
+     hover:bg-orange-400 hover:rounded-2xl transition-all;
+  }
+
+  .dropdown1 {
+    @apply bg-orangegoat p-2 m-2 rounded-md hover:bg-orange-400 hover:rounded-2xl transition-all;
+  }
+
+  .inputs1 {
+    @apply bg-[#EFEFBD] p-1 m-1 rounded-md hover:animate-pulse;
   }
 
   .navbar1 {
@@ -16,8 +41,8 @@
     flex-col justify-around bg-graygoat w-1/6;
   }
 
-  .centertools1 {
-    @apply flex items-center justify-center;
+  .pophover1 {
+    @apply hover:text-orangegoat hover:italic flex justify-center text-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110;
   }
 
   .centerlogin0 {
