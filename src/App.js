@@ -25,10 +25,7 @@ function App() {
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
           />
-          <Route
-            path="/question/:id"
-            element={<ProtectedRoute component={Question} />}
-          />
+          <Route path="/question/:id" element={<Question />} />
           <Route
             path="/:profileId"
             element={<ProtectedRoute component={SearchUser} />}
