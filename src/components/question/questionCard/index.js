@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { api } from "../../../api/api";
 import { toast } from "react-hot-toast";
 export function QuestionCard({ postDetail }) {
+  console.log(postDetail);
   const { id } = useParams();
   async function favQuestion() {
     try {
