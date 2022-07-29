@@ -36,9 +36,11 @@ export function LoginForm() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className="ml-[25%]">
+      <form onSubmit={handleSubmit} className="form0">
+      <div>Login</div>
         <input
+          className="input0"
           placeholder="E-mail"
           type="text"
           value={form.email}
@@ -47,6 +49,7 @@ export function LoginForm() {
         />
 
         <input
+          className="input0"
           placeholder="Password"
           type="password"
           value={form.password}
@@ -54,8 +57,10 @@ export function LoginForm() {
           onChange={handleChange}
         />
 
-        <button type="submit">Submit</button>
+        <button className="button0" type="submit">
+          Submit
+        </button>
       </form>
-    </>
+    </div>
   );
 }
