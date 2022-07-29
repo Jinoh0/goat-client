@@ -5,24 +5,24 @@ export function SearchedUserActivities({ user }) {
   const posts = user.postList;
   const comments = user.commentList;
 
-  console.log(activities);
   return (
-    <>
-      <h1>____________activities________________</h1>
-      <h1>------posts-------</h1>
+    <div className="activities0 break-words w-[70%]">
+      <h1>Activities</h1>
+      <h1>Posts</h1>
       {posts.map((c) => {
         return (
-          <>
-            <p>{c.title}</p>
-            <p>{c.category}</p>
-            <p>{c.description}</p>
-          </>
+          <div className="posts0" key={c._id}>
+            <p>Title: {c.title}</p>
+            <p>Category: {c.category}</p>
+            <p>Description: {c.description}</p>
+          </div>
         );
       })}
-      <h1>--------comments----------</h1>
+
+      <h1>Comments</h1>
       {comments.map((c) => {
         return (
-          <>
+          <div className="posts0" key={c._id}>
             <p>{c.comment}</p>
             <p>
               commented {""}
@@ -32,11 +32,10 @@ export function SearchedUserActivities({ user }) {
               )}{" "}
               {""}
               days ago
-              {/* by <strong>{c.owner}</strong> */}
             </p>
-          </>
+          </div>
         );
       })}
-    </>
+    </div>
   );
 }

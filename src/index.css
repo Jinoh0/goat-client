@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  /* @font-face {
-    font-family: "JetBrains Mono";
-    src: url("http://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,400;1,100&display=swap");
-  } */
-
   * {
     @apply font-mono;
   }
@@ -101,6 +96,7 @@
 
   .halfbox0 {
     @apply flex   border-solid border-2
+    flex-col
     h-[350px] 
     w-[49%]    
     mt-[5%]
@@ -125,15 +121,23 @@
   }
 
   .profilecard0 {
-    @apply flex rounded-lg items-center justify-center bg-gray-800 m-8 p-4 h-[50%]  border-white border-2;
+    @apply flex flex-col rounded-lg items-center justify-center 
+    bg-gray-800 m-8  p-4 h-[40%];
   }
 
   .profiletext0 {
-    @apply mt-[50%] align-text-top  text-beigegoat transition ease-in-out delay-150;
+    @apply align-text-top  
+    text-center
+    text-beigegoat
+     transition ease-in-out 
+    delay-150;
   }
 
   .profileimg0 {
-    @apply rounded-full justify-center items-center border-4  inline object-cover  w-[200px] h-[200px] mr-2 border-graygoat;
+    @apply rounded-full justify-center 
+     items-center border-4  inline object-cover  
+     w-[200px] h-[200px]  border-graygoat
+     self-center;
   }
 
   .settings0 {
@@ -148,14 +152,27 @@
   }
 
   .username0 {
-    @apply h-[5%] mb-6 mt-6;
+    @apply h-[5%] w-[50%] p-4 mb-6 mt-6 bg-[#efefbd];
   }
 
   .bio0 {
-    @apply h-[50%] w-[50%] break-words mb-[5%] p-4;
+    @apply h-[50%] w-[50%] break-words mb-[5%] p-4 bg-[#efefbd];
   }
 
   .posts0 {
-    @apply p-4 border-gray-500 break-words mr-5  border-2 m-4 bg-gray-300 h-[400px]  bg-orangegoat;
+
+    @apply p-4 border-gray-500 break-words mr-5  border-2 
+    m-4 bg-[#efefbd] 
+    h-[100%]
+     w-[85%];
+  }
+
+  .usercard0 {
+    @apply flex flex-col rounded-lg items-center justify-center bg-gray-800 m-8 p-4 h-[70%] w-[35%];
+  }
+
+  .goatlogo0 {
+    @apply h-[100px]  justify-center items-center mt-[-40px];
+
   }
 }
