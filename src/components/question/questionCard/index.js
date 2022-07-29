@@ -1,11 +1,15 @@
 import { differenceInDays } from "date-fns";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../../api/api";
 import { toast } from "react-hot-toast";
+
 import { Link } from "react-router-dom";
 
+
 export function QuestionCard() {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [postDetail, setPostDetail] = useState({
     owner: {
       email: "",
@@ -30,13 +34,23 @@ export function QuestionCard() {
     ],
   });
 
-  const { id } = useParams();
   async function favQuestion() {
     try {
       const response = await api.patch(`/post/${id}/favorite`);
       toast.success("Saved/Unsaved to favorites");
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  async function handleDelete() {
+    try {
+      await api.delete(`/post/delete/${id}`);
+      toast.success("deleted");
+      navigate("/feed");
+    } catch (error) {
+      console.log(error);
+      toast.error("you can't delete this post");
     }
   }
 
@@ -56,7 +70,7 @@ export function QuestionCard() {
 
   return (
     <div className=" flex flex-col  items-center   ">
-      <div className="bg-orangegoat rounded-md break-words  p-4 w-10/12 m-2 h-auto">
+      <div className="bg-orangegoat rounded-md break-words shadow-lg p-4 w-10/12 m-2 h-auto">
         <h1 className="mb-6 ">
           <strong>{postDetail.title}</strong>{" "}
           <Link to={`/${postDetail.owner._id}`}>
@@ -71,7 +85,7 @@ export function QuestionCard() {
           </Link>
         </h1>
         <p className="w-10/12">{postDetail.description}</p>
-        <div className="text-end mt-10">
+        <div className="text-start mt-10">
           <button className="regularhover1" onClick={favQuestion}>
             favorite ❤️{" "}
           </button>{" "}
@@ -80,6 +94,9 @@ export function QuestionCard() {
           ) : (
             <span>0</span>
           )}
+          <div className="text-end regularhover1">
+            <button onClick={handleDelete}>Delete post</button>
+          </div>
         </div>
       </div>
     </div>
