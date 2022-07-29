@@ -12,8 +12,10 @@ import "./index.css";
 function App() {
   return (
     <AuthContextComponent>
+
       <Toaster />
       <div className="entirebg1">
+
         <Routes>
           <Route path="/" element={<Login />} />
 

@@ -23,7 +23,7 @@ export function Profile() {
   }, []);
 
   return (
-    <>
+    <div className="h-screen">
       <NavBar />
       {!isLoading && (
         <div className="profilepage0">
@@ -34,6 +34,6 @@ export function Profile() {
           <LoggedActivities user={user} />
         </div>
       )}
-    </>
+    </div>
   );
 }
