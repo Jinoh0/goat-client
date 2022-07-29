@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../../context/authContext";
 import { api } from "../../../api/api";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "react-hot-toast";
 export function LoginForm() {
   const [form, setForm] = useState({
     email: "",
@@ -28,17 +28,21 @@ export function LoginForm() {
 
       // const loggedInUser = response.data;
       // if (loggedInUser._id !== "") {
-      navigate("/feed");
+      response.data.user.userName
+        ? navigate("/feed")
+        : navigate("/edit-profile");
+
       // }
     } catch (error) {
       console.log(error);
+      toast.error("Invalid email or password");
     }
   }
 
   return (
     <div className="ml-[25%]">
       <form onSubmit={handleSubmit} className="form0">
-      <div>Login</div>
+        <div>Login</div>
         <input
           className="input0"
           placeholder="E-mail"

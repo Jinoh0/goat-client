@@ -74,7 +74,10 @@ export function QuestionCard() {
           <strong>{postDetail.title}</strong>{" "}
           <Link to={`/${postDetail.owner._id}`}>
             <span>
-              asked by {postDetail.owner.email}{" "}
+              asked by{" "}
+              {postDetail.owner.userName
+                ? postDetail.owner.userName
+                : postDetail.owner.email}{" "}
               {differenceInDays(
                 new Date(Date.now()),
                 new Date(postDetail.createdAt)
