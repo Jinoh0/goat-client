@@ -21,12 +21,10 @@
 
   .entirebg1 {
     @apply flex flex-col;
-
   }
 
   .homepage1 {
     @apply flex flex-col m-2 p-2 items-center justify-center;
-
   }
 
   .searchbar1 {
@@ -123,7 +121,6 @@
     @apply flex flex-row w-[100%] justify-between;
   }
   .activities0 {
-
     @apply h-[auto]  bg-orangegoat p-6;
   }
 
@@ -159,6 +156,6 @@
   }
 
   .posts0 {
-    @apply p-4 border-gray-500 break-words mr-5  border-2 m-4 bg-gray-300 h-[400px]  bg-orangegoat
-    }
+    @apply p-4 border-gray-500 break-words mr-5  border-2 m-4 bg-gray-300 h-[400px]  bg-orangegoat;
+  }
 }
