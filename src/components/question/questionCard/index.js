@@ -45,12 +45,12 @@ export function QuestionCard() {
         const response = await api.get(`/post/${id}`);
 
         setPostDetail(response.data);
-        console.log(response.data);
+        console.log(response);
       } catch (error) {
         console.log(error);
       }
-      fetchPost();
     }
+    fetchPost();
   }, [id]);
 
   return (
