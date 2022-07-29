@@ -3,16 +3,23 @@
 @tailwind utilities;
 
 @layer components {
-  @font-face {
+  /* @font-face {
     font-family: "JetBrains Mono";
-    src: url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,400;1,100&display=swap");
-  }
+    src: url("http://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,400;1,100&display=swap");
+  } */
 
   * {
-    @apply font-jetbrains;
+    @apply font-mono;
+  }
+  body {
+    @apply bg-beigegoat;
   }
   .entirebg1 {
-    @apply bg-beigegoat flex flex-col h-[100%];
+    @apply flex flex-col;
+  }
+
+  .homepage1 {
+    @apply flex flex-col m-2 p-2 items-center justify-center;
   }
 
   .searchbar1 {
@@ -20,7 +27,7 @@
   }
 
   .questionBox1 {
-    @apply border-2 flex flex-col justify-center text-start items-center;
+    @apply flex flex-col justify-center text-start items-center;
   }
 
   .questionCard1 {
@@ -39,6 +46,10 @@
   .navbar1 {
     @apply fixed top-0 left-0 h-screen flex 
     flex-col justify-around bg-graygoat w-1/6;
+  }
+
+  .regularhover1 {
+    @apply transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110;
   }
 
   .pophover1 {

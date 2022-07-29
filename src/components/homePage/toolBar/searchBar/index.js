@@ -48,7 +48,7 @@ export function SearchBar() {
           name="search"
           type="text"
           onChange={searchItems}
-          placeholder="Search                              🔍"
+          placeholder="Search 🔍"
           onClick={toggle}
         />
       </form>

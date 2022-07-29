@@ -23,19 +23,27 @@ export function CommentSection() {
   }
 
   return (
-    <div className="border m-2">
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          type="text"
-          value={form.comment}
-          name="comment"
-          placeholder="Type in a solution or a tip"
-          minLength="64"
-          required
-        ></input>
-        <button type="submit">Send it</button>
-      </form>
+    <div className="flex flex-col m-6 p-6 items-center">
+      <div className="justify-center">
+        <form onSubmit={handleSubmit}>
+          <textarea
+            className="mb-2 w-[700px] h-[100px] inputs1"
+            onChange={handleChange}
+            type="text"
+            value={form.comment}
+            name="comment"
+            placeholder="Type in a solution or a tip"
+            minLength="64"
+            required
+          ></textarea>
+          <div className="text-center pophover1">
+            <button className="" type="submit">
+              Send it 🚀
+            </button>
+          </div>
+          <hr></hr>
+        </form>
+      </div>
     </div>
   );
 }

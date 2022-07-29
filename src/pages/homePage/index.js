@@ -6,7 +6,7 @@ import { NavBar } from "../../components/navbar/navBar";
 
 export function HomePage() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <NavBar />
       <div className="ml-[16%]">
         <div className="flex flex-col m-2 p-2 items-center justify-center">

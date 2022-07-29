@@ -53,7 +53,9 @@ export function FilterBar() {
           .map((c) => {
             return (
               <div key={c._id}>
-                <li className="dropdown1">{c.title}</li>
+                <Link to={`/question/${c._id}`}>
+                  <li className="dropdown1">{c.title}</li>
+                </Link>
               </div>
             );
           })}
