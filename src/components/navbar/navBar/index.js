@@ -11,9 +11,9 @@ export function NavBar() {
           <img
             src={goatlogo}
             alt=""
-            className="flex justify-center items-center self-center ml-[17%] mt-[12%] "
+            className="flex justify-center shadow-md items-center self-center ml-[17%] mt-[12%] "
           />
-          <p className="text-graygoat w-[37%] self-center flex justify-center mt-[-25%] ml-[28%]  font-bold bg-orangegoat">
+          <p className="text-graygoat w-[39%] self-center flex justify-center mt-[-25%] ml-[28%]  font-bold bg-orangegoat">
             GOAT.ASK
           </p>
         </Link>

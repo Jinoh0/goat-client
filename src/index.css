@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
- 
   * {
     @apply font-mono;
   }
@@ -123,11 +122,14 @@
 
   .profilecard0 {
     @apply flex flex-col rounded-lg items-center justify-center 
-    bg-gray-800 m-8  p-4 h-[50%];
+    bg-gray-800 m-8  p-4 h-[40%];
   }
 
   .profiletext0 {
-    @apply mt-[50%] align-text-top  text-beigegoat transition ease-in-out 
+    @apply align-text-top  
+    text-center
+    text-beigegoat
+     transition ease-in-out 
     delay-150;
   }
 

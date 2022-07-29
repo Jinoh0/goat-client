@@ -22,13 +22,17 @@ export function UserCard() {
   return (
     <>
       {!isLoading && (
-        <div className="profilecard0">
+        <div className="profilecard0 shadow-2xl">
           <Link to={"/profile"}>
-            <img src={user.img} alt="profile pic" className="profileimg0" />
+            <img
+              src={user.img}
+              alt="profile pic"
+              className="profileimg0 shadow-2xl "
+            />
             <div className="profiletext0">
-              <h1>Username: {user.userName}</h1>
-              <h4>E-mail: {user.email}</h4>
-              <p>About Me: {user.bio}</p>
+              <h1>{user.userName}</h1>
+              <h4>{user.email}</h4>
+              <p>{user.bio}</p>
             </div>
           </Link>
         </div>
