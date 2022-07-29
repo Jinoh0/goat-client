@@ -12,21 +12,27 @@ import "./index.css";
 function App() {
   return (
     <AuthContextComponent>
-
       <Toaster />
       <div className="entirebg1">
-
         <Routes>
           <Route path="/" element={<Login />} />
-
           <Route path="/feed" element={<HomePage />} />
-          <Route path="/edit-profile" element={<EditProfile />} />
+          <Route
+            path="/edit-profile"
+            element={<ProtectedRoute component={EditProfile} />}
+          />
           <Route
             path="/profile"
             element={<ProtectedRoute component={Profile} />}
           />
-          <Route path="/question/:id" element={<Question />} />
-          <Route path="/:profileId" element={<SearchUser />} />
+          <Route
+            path="/question/:id"
+            element={<ProtectedRoute component={Question} />}
+          />
+          <Route
+            path="/:profileId"
+            element={<ProtectedRoute component={SearchUser} />}
+          />
         </Routes>
       </div>
     </AuthContextComponent>

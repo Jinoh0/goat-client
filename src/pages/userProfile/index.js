@@ -32,8 +32,8 @@ export function SearchUser() {
       <NavBar />
       {!isLoading && (
         <div className="ml-[19%]">
-          <SearchedUserFavorites user={user} />
           <SearchedUserAbout user={user} />
+          <SearchedUserFavorites user={user} />
           <SearchedUserActivities user={user} />
         </div>
       )}

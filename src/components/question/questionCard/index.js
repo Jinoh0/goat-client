@@ -8,7 +8,6 @@ export function QuestionCard({ postDetail }) {
   async function favQuestion() {
     try {
       const response = await api.patch(`/post/${id}/favorite`);
-      console.log(response);
       toast.success("Saved/Unsaved to favorites");
     } catch (error) {
       console.log(error);
@@ -20,7 +19,7 @@ export function QuestionCard({ postDetail }) {
       <div className="bg-orangegoat rounded-md break-words  p-4 w-10/12 m-2 h-auto">
         <h1 className="mb-6 ">
           <strong>{postDetail.title}</strong>{" "}
-          <Link to="/:profileId">
+          <Link to={`/${postDetail.owner._id}`}>
             <span>
               asked by {postDetail.owner.email}{" "}
               {differenceInDays(
