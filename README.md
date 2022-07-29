@@ -1,5 +1,4 @@
-
-##GOAT.ASK
+#GOAT.ASK
 
 This is our third project , developed in the last week of the Ironhack Web Development Bootcamp.
 
