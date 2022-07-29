@@ -1,7 +1,7 @@
 import React from "react";
 import { api } from "../../../../api/api";
 import { useState } from "react";
-
+import { toast } from "react-hot-toast";
 export function CreateQuestion() {
   const [isToggled, setIsToggled] = useState(false);
   const [form, setForm] = useState({
@@ -23,6 +23,7 @@ export function CreateQuestion() {
       window.location.reload();
     } catch (error) {
       console.log(error);
+      toast.error("Minimum length not reached");
     }
   }
 
@@ -55,13 +56,13 @@ export function CreateQuestion() {
                 height="100%"
               ></input>
               <textarea
-                className="mb-2 w-96 h-[100px] inputs1"
+                className="mb-2 w-96 h-[100px] inputs1 break-words"
                 type="text"
                 value={form.description}
                 name="description"
                 onChange={handleChange}
                 placeholder="Describe your problem 🖋️"
-                minLength="64"
+                minlength="64"
                 required
               ></textarea>
               <select
@@ -69,6 +70,7 @@ export function CreateQuestion() {
                 name="category"
                 id="category"
                 onChange={handleChange}
+                required
               >
                 <option defaultValue hidden>
                   Which language/framework? 💾

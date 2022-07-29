@@ -18,6 +18,13 @@ export function CommentCard() {
     }
     fetchComment();
   }, [id]);
+  async function deleteComment() {
+    try {
+      await api.delete();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className=" flex flex-col  items-center">
@@ -26,7 +33,7 @@ export function CommentCard() {
         return (
           <div
             key={current._id}
-            className="justify-center break-words border-2 rounded-md p-8 m-2 w-4/5"
+            className="justify-center shadow-lg break-words border-2 rounded-md p-8 m-2 w-4/5"
           >
             <h3>
               <strong>{current.owner.email}</strong>
@@ -53,6 +60,21 @@ export function CommentCard() {
               ) : (
                 <span>0</span>
               )}
+              <div>
+                <button
+                  onClick={async function deleteComment() {
+                    try {
+                      const id = current._id;
+                      await api.delete(`/comment/delete/${id}`);
+                    } catch (error) {
+                      console.log(error);
+                      toast.error("you can't delete this comment");
+                    }
+                  }}
+                >
+                  Delete comment
+                </button>
+              </div>
             </div>
           </div>
         );

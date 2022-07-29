@@ -27,7 +27,7 @@ export function CommentSection() {
       <div className="justify-center">
         <form onSubmit={handleSubmit}>
           <textarea
-            className="mb-2 w-[700px] h-[100px] inputs1"
+            className="mb-2 shadow-lg w-[700px] h-[100px] inputs1"
             onChange={handleChange}
             type="text"
             value={form.comment}
